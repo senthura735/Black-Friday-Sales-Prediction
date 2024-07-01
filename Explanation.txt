@@ -1,0 +1,28 @@
+1. Importing Necessary Libraries:
+         We import the required libraries:
+               'pandas' for data manipulation.
+               'TfidfVectorizer' from 'sklearn.feature_extraction.text' for text preprocessing and feature extraction.
+               'train_test_split' from 'sklearn.model_selection' to split the dataset into training and testing sets.
+               'RandomForestRegressor' from 'sklearn.ensemble' to build the predictive model.
+               'mean_squared_error' from 'sklearn.metrics' to evaluate the model's performance.
+
+2. Loading the Data:
+               We load the social media posts data from a CSV file named "social_media_posts.csv" into a pandas DataFrame called 'data'.
+
+3. Preprocessing the Text Data:
+               We initialize a TF-IDF vectorizer, specifying to remove English stop words.
+               We transform the text data ('data['text']') into TF-IDF features ('X') and extract the target variable ('y') containing sales figures.
+
+4. Splitting the Data:
+                We split the data into training and testing sets. 80% of the data is used for training ('X_train', 'y_train'), and 20% is used for testing ('X_test', 'y_test').
+
+5. Training the Model:
+                We initialize a RandomForestRegressor model with 100 decision trees and train it using the training data.
+
+6. Evaluating the Model:
+                We use the trained model to make predictions on the test data ('X_test') and calculate the mean squared error (MSE) between the actual sales figures ('y_test') and the predicted sales figures ('y_pred').
+                The MSE provides a measure of how well the model performs on unseen data.
+
+7. Making Predictions:
+                 We create a new social media post ('new_post') and transform it using the same TF-IDF vectorizer ('vectorizer').
+We use the trained model to predict the sales figure for the new post ('new_post_vectorized') and print the predicted sales value.
